@@ -1,0 +1,33 @@
+### Recover all the movies
+GET http://localhost:3000/movies
+
+### Recover a movie by id
+GET http://localhost:3000/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
+### Recover movies by genre
+GET http://localhost:3000/movies?genre=action
+
+### Create a movie
+POST http://localhost:3000/movies
+Content-Type: application/json 
+    
+{
+    "title": "The Godfather",
+    "year": 1975,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://i.imgur.com/Uzvny9I.jpg",
+    "genre": [
+        "Crime",
+        "Drama"
+    ]
+}
+
+### Update a movie using PATCH (only update the fields that you want, not all the movie info)
+PATCH http://localhost:3000/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json 
+    
+{
+    "title": "My new movie",
+    "year": 1993
+}
